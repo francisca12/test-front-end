@@ -228,7 +228,7 @@ const App = () => {
       </div>  
       <div>
       {show ? <div className="back drop"></div> : null }
-      <Modal show={show} close={closeModalHandler} modal={setShow}/>
+      <Modal show={show} close={closeModalHandler}/>
       </div>
       
     </Router>
