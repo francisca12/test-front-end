@@ -18,7 +18,6 @@ export const Modal = ({show,close}) => {
 </div>
 <div className="modal-content">
 <div className="modal-body">
-<h4>Modal</h4>
 <div className="row flex-dir-r w96Porc flex-wrap ">
 <div className="card row flex-dir-c flexa-jcsb flexa-ai p10 img imghotel-1 wMin150 hMin150 m2px mt10 bcWhite">                           
     <h2 className="textsize-1 fs-sbold cWhite">WANHARA HOTEL</h2>

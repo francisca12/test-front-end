@@ -5,6 +5,10 @@ import IosCard from 'react-ionicons/lib/IosCard'
 import IosAppsOutline from 'react-ionicons/lib/IosAppsOutline'
 import IosExitOutline from 'react-ionicons/lib/IosExitOutline'
 import { Modal } from './component/Modal';
+import Hoteles from "./component/Hoteles";
+import Notificaciones from "./component/Notificaciones";
+import Pago from "./component/Pago";
+import DetalleNotificaciones from "./component/DetalleNotificaciones"
 import {
     BrowserRouter as Router,
     Switch,
@@ -12,9 +16,6 @@ import {
     Link
 }from "react-router-dom";
 
-import Hoteles from "./component/Hoteles";
-import Notificaciones from "./component/Notificaciones";
-import Pago from "./component/Pago";
 const App = () => {
    
    const[show,setShow] = useState(false);
@@ -37,14 +38,13 @@ const App = () => {
          <a className="mt30" href="#"><IosAppsOutline className="cWhite" fontSize="35px" color="#C9C9C9"/></a>
         </Link>
         <Link to="/notificaciones">
-    {/* NOTIFICATIONS */}
-    <a className="mt30" href="#"><IosMailOutline className="cWhite" fontSize="35px" color="#C9C9C9"/></a>
+        {/* NOTIFICATIONS */}
+        <a className="mt30" href="#"><IosMailOutline className="cWhite" fontSize="35px" color="#C9C9C9"/></a>
         </Link>
         <Link to="/pago">
          {/* PAYMENTS */}
          <a className="mt30" href="#"><IosCard className="cWhite" fontSize="35px" color="#C9C9C9"/></a>
         </Link>
-             
             </div>          
             <a className="mb10" href="#"><IosExitOutline fontSize="35px" color="#C9C9C9"/></a>
         </nav>
@@ -119,12 +119,15 @@ const App = () => {
 
 <Pago/>
 </Route>
-<h2 className="ml10px mt10 textsize-1 fs-sbold cBlack">Hoteles Disponibles</h2>
 <Route path="/hoteles">
+<h2 className="ml10px mt10 textsize-1 fs-sbold cBlack">Hoteles Disponibles</h2>
+
 <Hoteles/>
 </Route>
        
-      
+<Route path="/notificaciones/:id">
+    <DetalleNotificaciones/>
+    </Route>      
 
 <Route path="/" exact>
 <div className="row flex-dir-r w96Porc flex-wrap ">
@@ -159,12 +162,11 @@ const App = () => {
     </div>
     
     <div className="sectionRight mb10">
-        <h2 className="ml10px textsize-1 fs-sbold cBlack">Notificaciones 1</h2>
-        <Route path="/notificaciones">
+    <Route path="/notificaciones">
         <Notificaciones/>
         </Route>
-
-        <Route path="/">
+        <h2 className="ml10px textsize-1 fs-sbold cBlack">Notificaciones </h2>
+        <Route path="/" exact>
         <div className="notification mb30 mt10">
             <div className="notif-left flex-display flexa-jcsb">
 
@@ -216,9 +218,10 @@ const App = () => {
                 <p className="mt4 textsize-3 cGray">It is a long established fact that a reader will</p>
             </div>
         </div>
+       
         </Route>
-    </div>
-
+  
+        </div>
 </div>
 
 </section>
